@@ -4,7 +4,8 @@
   "description": "A fake rest api.",
   "main": "server.js",
   "scripts": {
-    "dev": "nodemon ./src/server.ts"
+    "dev": "nodemon ./src/server.ts",
+    "build": "rimraf dist && tsc" 
   },
   "author": "Me",
   "license": "ISC",
