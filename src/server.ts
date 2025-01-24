@@ -5,6 +5,7 @@ import bugRoutes from "./routes/bugs";
 const app = express();
 
 // Middlewares
+app.use(express.json()); // This middleware parses incoming requests with JSON payloads
 app.use(cors());
  
 // Routes
