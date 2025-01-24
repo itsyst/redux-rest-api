@@ -47,6 +47,7 @@ export class BugService {
         if (index === -1) return null;
 
         const bug = this.bugs[index];
+        if ("description" in updates) bug.description = updates.description;
         if ("resolved" in updates) bug.resolved = updates.resolved!;
         if ("userId" in updates) bug.userId = updates.userId;
 
