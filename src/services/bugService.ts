@@ -1,19 +1,19 @@
 import { v4 as uuidv4 } from 'uuid';
+import data from '../data/bugs-data'
 
 interface Bug {
     id: string;
     description?: string;
     resolved?: boolean;
     userId?: number;
+    priority?: string;
+    reportedAt?: string;
+    severity?: string;
+    tags?:string[]
 }
 
 export class BugService {
-    private bugs: Bug[] = [
-        { id: uuidv4(), description: "Frontend button issue", userId: 1, resolved: true },
-        { id: uuidv4(), description: "API endpoint error", userId: 1, resolved: false },
-        { id: uuidv4(), description: "Database connection failure", userId: 2, resolved: false },
-        { id: uuidv4(), description: "CSS styling glitch", resolved: false },
-    ];
+    private bugs: Bug[] = data;
 
     // Get all bugs
     getAllBugs(): Bug[] {
@@ -35,6 +35,10 @@ export class BugService {
             description: data.description || 'No description provided',
             resolved: false,
             userId: data.userId, // Only include userId if it's provided in data
+            priority: data.priority,	
+            reportedAt: data.reportedAt,
+            severity: data.severity,
+            tags: data.tags,
             ...data // Spread data after setting defaults
         };
         this.bugs.push(newBug);
@@ -50,6 +54,10 @@ export class BugService {
         if ("description" in updates) bug.description = updates.description;
         if ("resolved" in updates) bug.resolved = updates.resolved!;
         if ("userId" in updates) bug.userId = updates.userId;
+        if ("priority" in updates) bug.priority = updates.priority;
+        if ("reportedAt" in updates) bug.reportedAt = updates.reportedAt;
+        if ("severity" in updates) bug.severity = updates.severity;
+        if ("tags" in updates) bug.tags = updates.tags;
 
         return bug;
     }
