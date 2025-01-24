@@ -2,8 +2,8 @@ import { v4 as uuidv4 } from 'uuid';
 
 interface Bug {
     id: string;
-    description: string;
-    resolved: boolean;
+    description?: string;
+    resolved?: boolean;
     userId?: number;
 }
 
@@ -27,11 +27,15 @@ export class BugService {
 
     // Add a new bug
     addBug(data: Partial<Bug>): Bug {
+        if (!data) {
+            throw new Error('Bug data must be provided');
+        }
         const newBug: Bug = {
             id: uuidv4(),
-            description: data.description || "No description provided",
+            description: data.description || 'No description provided',
             resolved: false,
-            ...data
+            userId: data.userId, // Only include userId if it's provided in data
+            ...data // Spread data after setting defaults
         };
         this.bugs.push(newBug);
         return newBug;
@@ -47,5 +51,12 @@ export class BugService {
         if ("userId" in updates) bug.userId = updates.userId;
 
         return bug;
+    }
+
+    // Delete an existing bug
+    removeBug(id: string): string {
+        // Filter doesn't modify the array; it returns a new array
+        this.bugs = this.bugs.filter(bug => bug.id !== id);
+        return id;
     }
 }
