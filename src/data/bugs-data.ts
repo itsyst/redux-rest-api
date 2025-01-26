@@ -1,8 +1,6 @@
-import { v4 as uuidv4 } from 'uuid';
-
 export default [
     {
-        id: uuidv4(),
+        id: "71226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "Frontend button issue",
         userId: 1,
         resolved: true,
@@ -12,7 +10,7 @@ export default [
         severity: "Major"
     },
     {
-        id: uuidv4(),
+        id: "81226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "API endpoint error",
         userId: 1,
         resolved: false,
@@ -22,7 +20,7 @@ export default [
         severity: "Moderate"
     },
     {
-        id: uuidv4(),
+        id: "91226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "Database connection failure",
         userId: 2,
         resolved: false,
@@ -32,7 +30,7 @@ export default [
         severity: "Critical"
     },
     {
-        id: uuidv4(),
+        id: "a1226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "CSS styling glitch",
         resolved: false,
         priority: "Low",
@@ -41,7 +39,7 @@ export default [
         severity: "Minor"
     },
     {
-        id: uuidv4(),
+        id: "b1226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "Search functionality not returning results",
         userId: 3,
         resolved: false,
@@ -51,7 +49,7 @@ export default [
         severity: "Major"
     },
     {
-        id: uuidv4(),
+        id: "c1226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "User login page throwing 500 error",
         userId: 4,
         resolved: false,
@@ -61,7 +59,7 @@ export default [
         severity: "Critical"
     },
     {
-        id: uuidv4(),
+        id: "d1226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "Mobile responsiveness issue on homepage",
         userId: 5,
         resolved: true,
@@ -71,7 +69,7 @@ export default [
         severity: "Moderate"
     },
     {
-        id: uuidv4(),
+        id: "e1226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "Session timeout not working correctly",
         userId: 2,
         resolved: false,
@@ -81,7 +79,7 @@ export default [
         severity: "Major"
     },
     {
-        id: uuidv4(),
+        id: "f1226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "Notifications not being sent to users",
         userId: 3,
         resolved: false,
@@ -91,7 +89,7 @@ export default [
         severity: "Moderate"
     },
     {
-        id: uuidv4(),
+        id: "g1226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "Admin panel taking too long to load",
         userId: 4,
         resolved: true,
@@ -101,7 +99,7 @@ export default [
         severity: "Minor"
     },
     {
-        id: uuidv4(),
+        id: "h1226abd-16f3-4120-8511-b373c022361b", // Pre-generated UUID
         description: "Forgot password email not being sent",
         userId: 5,
         resolved: false,
@@ -111,4 +109,3 @@ export default [
         severity: "Major"
     }
 ];
-
